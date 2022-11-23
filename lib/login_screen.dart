@@ -127,7 +127,9 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xffE7F2F7),
       appBar: AppBar(
+        elevation: 0,
         title: const Text("Animated login"),
         centerTitle: true,
       ),
@@ -157,11 +159,11 @@ class _LoginScreenState extends State<LoginScreen> {
                           validator: (m) => m != Email ? 'Wrong Email' : null,
                           onChanged: (value) {
                             if (value.isNotEmpty &&
-                                value.length < 16 &&
+                                value.length < 15 &&
                                 !isLookingLeft) {
                               addLookLeftController();
                             } else if (value.isNotEmpty &&
-                                value.length > 16 &&
+                                value.length > 15 &&
                                 !isLookingRight) {
                               addLookRightController();
                             }
